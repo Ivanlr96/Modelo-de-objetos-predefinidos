@@ -119,3 +119,23 @@ const mostrar = () => {
     })
     document.close();
 }
+function ventana () {
+    const ventana=window.open('./templates/ventana.html', 'nuevaVentana', "toolbar=0,location=1,directories=0,resizable=0,width=800,height=800");
+    ventana.onload = () =>{
+        const windowURL = ventana.location.href
+        const windowProtocol = ventana.location.protocol
+    ventana.document.write(`
+    <h1>Ejemplo de ventana nueva</h1>
+    <p><strong>URL Completa: </strong>${windowURL}</p>
+    <p><strong>Protocolo utilizado: </strong>${windowProtocol}</p>
+    <iframe width="800" height="600" src="https://www.rtve.es/noticias/"></iframe>
+    `)
+    // Boton para cerrar la ventana
+        const btnC=ventana.document.createElement('button')
+        btnC.innerText="Cerrar Ventana"
+        ventana.document.body.appendChild(btnC)
+        btnC.addEventListener('click', ()=> {
+            ventana.close()
+        })
+}
+}
