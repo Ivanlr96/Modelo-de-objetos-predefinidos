@@ -56,3 +56,34 @@ function edad() {
     }
     return edad
 }
+function estacion() {
+    // convertimos a numero entero el valor introducido para el mes //
+    let mesN = parseInt(mes);
+    let mesL = mesN.toString()
+    // Si introducimos el día sin cero inicial para valores inferiores a 10 se le añade cero al inicio
+    if (dia < 10) dia = "0" + dia
+    let diaL = dia.toString();
+    // Juntamos (no estamos sumando) el mes y el año concatenando
+    let mesdia = mesL.concat(diaL)
+    let estac = parseInt(mesdia)
+    if (estac > 0) {
+        // desde eñ 21 de marzo (321), 3 es del mes y 21 es del dia hasta el 20 de junio (620) es primavera
+        if (estac >= 321 && estac <= 620) {
+            return "primavera"
+            // desde el 21 de junio (621) hasta el 20 de septiembre (920) es Verano
+        } else if (estac >= 621 && estac <= 920) {
+            return "Verano"
+
+        } // desde el 21 de septiembre (921) hasta el 20 de diciembre (1220)
+        else if (estac >= 921 && estac <= 1220) {
+            return "Otoño"
+        }
+        else {
+            return "Invierno"
+        }
+        // la que queda es el invierno
+
+    } else {
+        return null
+    }
+}
