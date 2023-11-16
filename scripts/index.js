@@ -139,3 +139,6 @@ function ventana () {
         })
 }
 }
+// las siguientes líneas hacen que se ejecuten las funciones cuando se cargue la página
+document.addEventListener("DOMContentLoaded", saludar)
+document.addEventListener("DOMContentLoaded", mostrar)
