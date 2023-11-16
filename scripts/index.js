@@ -87,3 +87,35 @@ function estacion() {
         return null
     }
 }
+
+// funcion para mostrar todo lo necesario
+const mostrar = () => {
+    document.open()
+    document.write(`Buenos días <strong> ${nombre} </strong> <br/>`)
+    document.write(`La longitud del nombre completo es de <strong>${nombreCompleto.length} </strong> caracteres, incluyendo los espacios <br/>`)
+    document.write(`La <strong> primera letra 'A' </strong> del nombre está en la posición <strong> ${nombreCompleto.indexOf('a', 0) + 1} </strong> <br/>`)
+    document.write(`La <strong> última letra 'A' </strong> del nombre está en la posición <strong> ${nombreCompleto.lastIndexOf('a', nombreCompleto.length) + 1} </strong> <br/>`)
+    document.write(`Tu nombre menos <strong> las tres primeras letras </strong> de tu nombre es <strong> ${nombreCompleto.slice(3,nombreCompleto.length)} </strong><br/>`)
+    document.write(`Tu nombre todo en <strong> MAYÚSCULAS </strong> es <strong> ${nombreCompleto.toUpperCase()} </strong> <br/>`)
+    document.write(`Tu <strong> edad </strong> es de ${edad()} años <br/>`)
+    document.write(`Naciste un feliz día de <strong>${estacion()} </strong> del año ${anio}</br>`)
+    document.write(`El <strong> coseno de 180 </strong> es ${Math.cos(180 * (Math.PI / 180))}<br/>`)
+    document.write(`El numero mayor de <strong>(34, 67, 75, 35, 19) </strong> es ${Math.max(34, 67, 23, 75, 35, 19)} <br/>`)
+    document.write(`Ejemplo de número al azar entre 0 y 100:<strong> ${(Math.random() * 100).toFixed(0)} </ strong><br/>`)
+    //Botón para abrir la ventana
+    const btn1 = document.createElement('button')
+    btn1.innerText = 'Abrir ventana'
+    document.body.appendChild(btn1)
+    btn1.addEventListener('click', () => {
+       ventana ()
+    })
+    const btn2 = document.createElement('button')
+    // Boton para reiniciar la página y que se vuelvan a pedir los datos
+    btn2.innerText = 'Reiniciar'
+    document.body.appendChild(btn2)
+    btn2.addEventListener('click', () => {
+        saludar();
+        mostrar();
+    })
+    document.close();
+}
